@@ -1,10 +1,10 @@
-name: Docker Image CI
+name: Build and Publish Docker Image CI
 
 on:
   push:
-    branches: [ "add_ci" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "add_ci" ]
+    branches: [ "main" ]
 
 jobs:
 
@@ -21,5 +21,5 @@ jobs:
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
         name: raytr/backend-challenge
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
